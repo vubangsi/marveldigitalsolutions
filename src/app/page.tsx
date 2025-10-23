@@ -281,8 +281,8 @@ export default function HomePage() {
                   Pioneering the Future of Enterprise AI
                 </Typography>
                 <Typography className="text-gray-300 mb-6 leading-relaxed">
-                  At Marvel Digital Solutions, we're not just building AI systems — we're crafting 
-                  the intelligent infrastructure that will power the next generation of enterprise operations. 
+                  At Marvel Digital Solutions, we&apos;re not just building AI systems — we&apos;re crafting
+                  the intelligent infrastructure that will power the next generation of enterprise operations.
                   Our platforms combine cutting-edge research with practical business applications.
                 </Typography>
                 <Typography className="text-gray-300 mb-8 leading-relaxed">
@@ -348,7 +348,7 @@ export default function HomePage() {
               Ready to Transform Your Enterprise?
             </Typography>
             <Typography className="text-gray-400 mb-12 max-w-2xl mx-auto text-lg">
-              Let's discuss how our AI platforms can revolutionize your business operations. 
+              Let&apos;s discuss how our AI platforms can revolutionize your business operations.
               Schedule a consultation with our experts today.
             </Typography>
             
