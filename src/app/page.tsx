@@ -3,8 +3,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { 
-  Box, Typography, Button, Container, Grid, Card, CardContent, 
-  Chip, IconButton, useTheme, alpha
+  Box, Typography, Button, Container, Grid, 
+  Chip
 } from '@mui/material'
 import {
   SmartToy, Psychology, Hub, Cloud, Science, Security,
@@ -137,8 +137,6 @@ const features = [
 ]
 
 export default function HomePage() {
-  const theme = useTheme()
-
   return (
     <Box>
       {/* Hero Section */}
