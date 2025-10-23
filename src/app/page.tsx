@@ -142,25 +142,51 @@ export default function HomePage() {
   return (
     <Box>
       {/* Hero Section */}
-      <Box 
+      <Box
         id="home"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient"
+        sx={{
+          position: 'relative',
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          backgroundImage: 'linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #3730a3 100%)'
+        }}
       >
         {/* Animated Background Elements */}
-        <Box className="absolute inset-0 overflow-hidden">
+        <Box sx={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
           <motion.div
-            className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-indigo-500/20 blur-3xl"
-            animate={{ 
-              x: [0, 100, 0], 
+            style={{
+              position: 'absolute',
+              top: '25%',
+              left: '25%',
+              width: '384px',
+              height: '384px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(99, 102, 241, 0.2)',
+              filter: 'blur(96px)'
+            }}
+            animate={{
+              x: [0, 100, 0],
               y: [0, -50, 0],
               scale: [1, 1.1, 1]
             }}
             transition={{ duration: 20, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-cyan-500/20 blur-3xl"
-            animate={{ 
-              x: [0, -100, 0], 
+            style={{
+              position: 'absolute',
+              bottom: '25%',
+              right: '25%',
+              width: '384px',
+              height: '384px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(6, 182, 212, 0.2)',
+              filter: 'blur(96px)'
+            }}
+            animate={{
+              x: [0, -100, 0],
               y: [0, 50, 0],
               scale: [1, 1.2, 1]
             }}
@@ -168,31 +194,37 @@ export default function HomePage() {
           />
         </Box>
 
-        <Container maxWidth="lg" className="relative z-10 text-center px-4">
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 10, textAlign: 'center', px: 2 }}>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <Typography 
-              variant="h1" 
-              className="gradient-text mb-6 animate-float"
-              sx={{ fontSize: { xs: '2.5rem', md: '4rem' } }}
+            <Typography
+              variant="h1"
+              className="gradient-text animate-float"
+              sx={{ fontSize: { xs: '2.5rem', md: '4rem' }, mb: 3 }}
             >
               Future-Ready AI Solutions
             </Typography>
-            <Typography 
-              variant="h2" 
-              className="text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
-              sx={{ fontSize: { xs: '1.25rem', md: '1.5rem' } }}
+            <Typography
+              variant="h2"
+              sx={{
+                fontSize: { xs: '1.25rem', md: '1.5rem' },
+                color: '#d1d5db',
+                mb: 4,
+                maxWidth: '56rem',
+                mx: 'auto',
+                lineHeight: 1.6
+              }}
             >
-              Transforming enterprises with cognitive intelligence, autonomous systems, 
+              Transforming enterprises with cognitive intelligence, autonomous systems,
               and cutting-edge AI technologies that drive unprecedented innovation and efficiency.
             </Typography>
             
-            <Box className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button 
-                variant="contained" 
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, justifyContent: 'center', mb: 6 }}>
+              <Button
+                variant="contained"
                 size="large"
                 className="btn-primary"
                 endIcon={<ArrowForward />}
@@ -200,8 +232,8 @@ export default function HomePage() {
               >
                 Explore Our Services
               </Button>
-              <Button 
-                variant="outlined" 
+              <Button
+                variant="outlined"
                 size="large"
                 className="btn-secondary"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -211,12 +243,18 @@ export default function HomePage() {
             </Box>
 
             {/* Feature Pills */}
-            <Box className="flex flex-wrap justify-center gap-3">
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1.5 }}>
               {['Agentic AI', 'Enterprise Intelligence', 'Autonomous Systems', 'Quantum-Ready'].map((feature) => (
-                <Chip 
+                <Chip
                   key={feature}
                   label={feature}
-                  className="bg-white/10 text-indigo-300 border-indigo-400/30 backdrop-blur-sm"
+                  sx={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    color: '#a5b4fc',
+                    borderColor: 'rgba(99, 102, 241, 0.3)',
+                    border: '1px solid',
+                    backdropFilter: 'blur(10px)'
+                  }}
                 />
               ))}
             </Box>
@@ -225,7 +263,7 @@ export default function HomePage() {
       </Box>
 
       {/* Services Section */}
-      <Box id="services" className="py-20 bg-dark-900">
+      <Box id="services" sx={{ py: 10, backgroundColor: '#0a0a0a' }}>
         <Container maxWidth="lg">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -233,18 +271,24 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Typography 
-              variant="h2" 
-              className="gradient-text text-center mb-4"
-              sx={{ fontSize: { xs: '2rem', md: '3rem' } }}
+            <Typography
+              variant="h2"
+              className="gradient-text"
+              sx={{ fontSize: { xs: '2rem', md: '3rem' }, textAlign: 'center', mb: 2 }}
             >
               Our AI Services
             </Typography>
-            <Typography 
-              variant="h6" 
-              className="text-gray-400 text-center mb-16 max-w-3xl mx-auto"
+            <Typography
+              variant="h6"
+              sx={{
+                color: '#9ca3af',
+                textAlign: 'center',
+                mb: 8,
+                maxWidth: '48rem',
+                mx: 'auto'
+              }}
             >
-              Eight cutting-edge AI platforms designed to transform your enterprise operations 
+              Eight cutting-edge AI platforms designed to transform your enterprise operations
               with unprecedented intelligence and automation capabilities.
             </Typography>
           </motion.div>
